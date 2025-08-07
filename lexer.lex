@@ -87,6 +87,19 @@ WHITE = (" "|\t|\n)
 
 %%
 
+<YYINITIAL>{PLUS}     { return new Token(Token.PLUS);  }
+<YYINITIAL>{MINUS}    { return new Token(Token.MINUS); }
+<YYINITIAL>{TIMES}    { return new Token(Token.TIMES); }
+<YYINITIAL>{DIV}      { return new Token(Token.DIV);   }
+<YYINITIAL>{MOD}      { return new Token(Token.MOD);   }
+<YYINITIAL>{POW}      { return new Token(Token.POW);   }
+
+<YYINITIAL>{LPAREN}   { return new Token(Token.LPAREN); }
+<YYINITIAL>{RPAREN}   { return new Token(Token.RPAREN); }
+
+<YYINITIAL>{NUMBER}   { return new Token(Token.NUMBER, yytext()); }
+
+
 <YYINITIAL>{SEMI}   { return new Token(Token.SEMI);   }
 
 <YYINITIAL>{WHITE}  { /* NO HACER NADA */             }
